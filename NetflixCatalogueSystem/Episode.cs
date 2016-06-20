@@ -11,6 +11,6 @@ namespace NetflixCatalogueSystem
         public int number;
         public string name;
         public string duration;
-        public decimal rating;
+        public double rating;
     }
 }

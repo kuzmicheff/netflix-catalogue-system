@@ -8,6 +8,6 @@ namespace NetflixCatalogueSystem
 {
     class Genre
     {
-        public string genre;
+        public List<string> genre;
     }
 }

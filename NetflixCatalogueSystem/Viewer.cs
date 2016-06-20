@@ -47,13 +47,27 @@ namespace NetflixCatalogueSystem
                 Console.WriteLine("Name: " + item.name);
                 Console.WriteLine("Duration: " + item.duration);
                 Console.WriteLine("Rating: " + item.rating);
-                foreach (string genre in item.genre)
+                string genres = null;
+                if (item.genre.Count > 1)
                 {
-                    Console.WriteLine("Genre: " + genre);
+                    int i;
+                    for (i = 0; i < item.genre.Count - 1; i++)
+                    {
+                        genres += item.genre[i] + ", ";
+
+                    }
+                    genres += item.genre[item.genre.Count - 1];
                 }
+                else
+                {
+                    genres = item.genre[0];
+                }
+                Console.WriteLine("Genre: " + genres);
                 Console.WriteLine();
+                //this check makes the type key in JSON file technically unnecessary
                 if (item.episode != null)
                 {
+                    Console.WriteLine("Episodes\n");
                     foreach (Episode episode in item.episode)
                     {
                         Console.WriteLine(episode.number + ". " + episode.name);
@@ -64,8 +78,11 @@ namespace NetflixCatalogueSystem
                 }
                 Console.WriteLine();
             }
-            //System.Threading.Thread.Sleep(10000);
-            Console.ReadKey();
+        }
+
+        public void displayGenres()
+        {
+
         }
 
         public void exportCatalogue()

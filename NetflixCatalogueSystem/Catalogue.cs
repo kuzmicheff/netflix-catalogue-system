@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace NetflixCatalogueSystem
 {
-    class Catalogue
+    class Catalogue : Title
     {
         public string type;
         public string name;
         public string duration;
-        public decimal rating;
+        public double? rating;
         public List<string> genre;
         public List<Episode> episode;
     }
